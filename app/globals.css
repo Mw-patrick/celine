@@ -1,3 +1,4 @@
+/* globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -65,9 +66,25 @@ body {
 
 @layer base {
   * {
-    @apply border-border;
+    border: 1px solid var(--border);
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Create a custom bg-background class */
+@layer utilities {
+  .bg-background {
+    background-color: hsl(var(--background));
+  }
+
+  .header-button {
+    @apply cursor-pointer p-1 border-transparent hover:border-white rounded-[2px];
+  }
+
+  .h1-bold {
+    @apply font-bold text-2xl lg:text-3xl;
   }
 }
