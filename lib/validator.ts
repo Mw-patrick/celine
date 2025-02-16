@@ -6,8 +6,8 @@ const Price = (field: string) => {
     return z.coerce
         .number()
         .refine(
-            (value) => /^\d+(\.\d{2})?$/.test(formatNumberWithDecimal(value)),
-            `${field} must have exactly two decimal places (e.g., 49.99)`
+            (value) => /^\d+(\.\d{6})?$/.test(formatNumberWithDecimal(value)),
+            `${field} must have exactly two decimal places (e.g., 10000.99)`
         );
 };
 
